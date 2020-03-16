@@ -1,0 +1,24 @@
+#covidTracker {
+    color: inherit;
+    opacity: 0.8;
+    position: absolute;
+    right: 0px;
+    top: 2px;
+    font-size: 8pt;
+    font-weight: normal;
+    text-align: center;
+    /* display: inline-block; */
+}
+#covidDelta{
+    color: #01FF70;
+    font-weight: bold;
+}
+#covidTracker.no-data{
+    color: #FFDC00;
+}
+span.covidDataTitle{
+    color: initial;
+}
+span.covidDataTitle{
+    color: inherit;
+}

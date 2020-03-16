@@ -1,0 +1,15 @@
+{
+    "display_name": "Coronavirus Tracker",
+    "module_name": "coronavirus_tracker",
+    "repo_name": "coronavirus-tracker",
+    "ankiweb_id": "",
+    "author": "Glutanimate",
+    "contact": "https://glutanimate.com",
+    "homepage": "https://github.com/glutanimate/coronavirus-tracker",
+    "copyright_start": 2020,
+    "tags": "",
+    "conflicts": [],
+    "targets": [
+        "anki21"
+    ]
+}
