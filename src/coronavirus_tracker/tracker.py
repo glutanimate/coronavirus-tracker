@@ -116,7 +116,7 @@ covidUpdate({json.dumps(recovered_str)}, {json.dumps(delta_str)}, {json.dumps(ti
 class DataFetcher(QThread):
 
     # https://github.com/ExpDev07/coronavirus-tracker-api
-    _API_URL = "https://coronavirus-tracker-api.herokuapp.com/recovered"
+    _API_URL = "https://covid19.mathdro.id/api"
 
     success = pyqtSignal(object)
     error = pyqtSignal(object)
@@ -171,15 +171,15 @@ class CovidTracker:
 
     # @pyqtSlot(object)
     def _on_request_succeeded(self, data: dict):
-        recovered = data.get("latest")
-        datetime = data.get("last_updated")
+        recovered = data.get("recovered", {}).get("value")
+        datetime = data.get("lastUpdate")
 
         if not recovered or not datetime:
             return False
         
         ## debugging
-        recovered += self.extra
-        self.extra += 500
+        # recovered += self.extra
+        # self.extra += 500
 
         self._tracker_ui.update(recovered, datetime)
 
