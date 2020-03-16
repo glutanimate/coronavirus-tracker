@@ -2,9 +2,9 @@
     color: inherit;
     opacity: 0.8;
     position: absolute;
-    right: 0px;
-    top: 2px;
-    font-size: 8pt;
+    right: 0.2em;
+    top: 0.1em;
+    font-size: 0.7em;
     font-weight: normal;
     text-align: center;
     /* display: inline-block; */
