@@ -16,7 +16,7 @@ A small add-on for [Anki](https://apps.ankiweb.net/) that extends the toolbar wi
 
 The idea behind the add-on is to provide some encouragement in these troubling times, reminding us that this too shall pass.
 
-Data source: [John Hopkins CSSE Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html) via [mathdroid/covid-19-api](https://github.com/mathdroid/covid-19-api).
+Data source: [Johns Hopkins CSSE Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html) via [mathdroid/covid-19-api](https://github.com/mathdroid/covid-19-api).
 
 ### Table of Contents <!-- omit in toc -->
 

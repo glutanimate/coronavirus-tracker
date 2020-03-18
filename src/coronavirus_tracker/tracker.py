@@ -99,7 +99,7 @@ class TrackerUI:
     def _link_handler(self) -> None:
         viewer = WebViewer(
             "https://coronavirus.jhu.edu/map.html",
-            title="John Hopkins COVID-19 Stats",
+            title="Johns Hopkins COVID-19 Stats",
             parent=self._toolbar.mw,
             width=1200,
             height=800,
