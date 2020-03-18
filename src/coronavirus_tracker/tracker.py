@@ -39,6 +39,8 @@ from typing import Any, List, Optional, Union
 import requests
 from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
 
+from .libaddon.gui.dialog_webview import WebViewer
+
 from aqt import gui_hooks
 from aqt.addons import AddonManager
 from aqt.main import AnkiQt
@@ -89,7 +91,14 @@ class TrackerUI:
         web_content.js.append(f"/_addons/{self._package_name}/web/tracker.js")
 
     def _link_handler(self) -> None:
-        openLink("https://coronavirus.jhu.edu/map.html")
+        viewer = WebViewer(
+            "https://coronavirus.jhu.edu/map.html",
+            title="John Hopkins COVID-19 Stats",
+            parent=self._toolbar.mw,
+            width=1200,
+            height=800,
+        )
+        viewer.show()
 
     # Helpers
 
@@ -180,7 +189,7 @@ class CovidTracker:
 
         if not recovered or not datetime:
             return False
-        
+
         ## debugging
         # recovered += self.extra
         # self.extra += 500
