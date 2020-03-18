@@ -45,6 +45,8 @@ This section will be updated once the add-on is available on AnkiWeb.
 
 Please click on the entry corresponding to your Anki version:
 
+**Important**: This add-on requires Anki 2.1.22 or higher to work.
+
 <details>
 
 <summary><i>Anki 2.1</i></summary>
