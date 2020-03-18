@@ -153,8 +153,6 @@ class DataFetcher(QThread):
 
 class CovidTracker:
 
-    extra = 500
-
     def __init__(self, main_window: AnkiQt):
         self._main_window = main_window
         self._data_fetcher = DataFetcher()
@@ -197,10 +195,6 @@ class CovidTracker:
 
         if not recovered or not datetime:
             return False
-
-        ## debugging
-        # recovered += self.extra
-        # self.extra += 500
 
         self._tracker_ui.update(recovered, datetime)
 
