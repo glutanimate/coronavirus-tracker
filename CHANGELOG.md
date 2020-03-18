@@ -12,12 +12,8 @@ All notable changes to [Coronavirus Tracker](https://ankiweb.net/shared/info/) w
 
 - Initial release of Coronavirus Tracker
 
-### Added
-
-- Initial release of Coronavirus Tracker
-
 [Unreleased]: https://github.com/glutanimate/coronavirus-tracker/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/glutanimate/coronavirus-tracker/compare/v0.1.0-alpha.1...v0.1.0
+[0.1.0]: https://github.com/glutanimate/coronavirus-tracker/releases/tag/v0.1.0
 
 -----
 
