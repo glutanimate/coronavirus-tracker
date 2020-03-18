@@ -11,11 +11,17 @@
     /* display: inline-block; */
 }
 #covidDelta{
-    color: #01FF70;
+    color: #2ecc40;
     font-weight: bold;
 }
+.nightMode #covidDelta {
+    color: #01FF70;
+}
 #covidTracker.no-data{
-    color: #FFDC00;
+    color: #ff851b;
+}
+.nightMode #covidTracker.no-data{
+    color: #edcd03;
 }
 span.covidDataTitle{
     color: initial;
