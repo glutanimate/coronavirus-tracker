@@ -1,4 +1,4 @@
-<p align="center"><img src="screenshots/logo.png"></p>
+<p align="center"><img src="screenshots/screenshot.png"></p>
 
 <h2 align="center">Coronavirus Tracker for Anki</h2>
 
@@ -10,9 +10,13 @@
 <a title="Follow me on Twitter" href="https://twitter.com/intent/user?screen_name=glutanimate"><img src="https://img.shields.io/twitter/follow/glutanimate.svg"></a>
 </p>
 
-> Intro quip
 
-This is an add-on for the spaced-repetition flashcard app [Anki](https://apps.ankiweb.net/).
+
+A small add-on for [Anki](https://apps.ankiweb.net/) that adds a small indicator to the toolbar, displaying the number of people currently known to have recovered from [COVID-19](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic).
+
+The idea behind the add-on is to provide some encouragement in these troubling times, reminding us that this too shall pass.
+
+Data source: [John Hopkins CSSE Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html) via [mathdroid/covid-19-api](https://github.com/mathdroid/covid-19-api).
 
 ### Table of Contents <!-- omit in toc -->
 
