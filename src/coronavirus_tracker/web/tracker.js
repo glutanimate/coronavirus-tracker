@@ -4,7 +4,7 @@ function covidUpdate(recovered, delta, time) {
         content += ` <span id="covidDelta">(+${delta})</span>`;
     }
     document.querySelector("#covidTracker").innerHTML = `<span class="covidDataTitle">Recovered:</span><br> ${content}`;
-    document.querySelector("#covidTracker").title = `Patients worldwide confirmed to have recovered from COVID-19 as of ${time}`;
+    document.querySelector("#covidTracker").title = `Confirmed recoveries from COVID-19 as of ${time}`;
     document.querySelector("#covidTracker").classList.remove("no-data");
 
 }
