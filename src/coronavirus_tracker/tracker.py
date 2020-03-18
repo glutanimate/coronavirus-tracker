@@ -42,20 +42,21 @@ from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
 from aqt import gui_hooks
 from aqt.addons import AddonManager
 from aqt.main import AnkiQt
+from aqt.utils import openLink
 from aqt.progress import ProgressManager
 from aqt.toolbar import Toolbar, TopToolbar
-from aqt.utils import tooltip
 from aqt.webview import AnkiWebView, WebContent
 
 
 class TrackerUI:
-    def __init__(self, toolbar_web: AnkiWebView, package_name: str):
-        self._web = toolbar_web
+    def __init__(self, toolbar: Toolbar, package_name: str):
+        self._toolbar = toolbar
         self._package_name = package_name
         self._recovered: Optional[int] = None
         self._delta: int = 0
         self._time: Optional[str] = None
         self._no_data: bool = False
+        self._toolbar.link_handlers["covidStats"] = self._link_handler
 
     # API
 
@@ -70,7 +71,7 @@ class TrackerUI:
 
     def set_no_data(self):
         self._no_data = True
-        self._web.eval("covidNoData();")
+        self._toolbar.web.eval("covidNoData();")
 
     # GUI hooks
 
@@ -87,6 +88,9 @@ class TrackerUI:
         web_content.css.append(f"/_addons/{self._package_name}/web/tracker.css")
         web_content.js.append(f"/_addons/{self._package_name}/web/tracker.js")
 
+    def _link_handler(self) -> None:
+        openLink("https://coronavirus.jhu.edu/map.html")
+
     # Helpers
 
     def _get_update_js(self, recovered: int, delta: int, time: str):
@@ -97,7 +101,7 @@ covidUpdate({json.dumps(recovered_str)}, {json.dumps(delta_str)}, {json.dumps(ti
 """
 
     def _create_tracker_element(self):
-        content = """<div id="covidTracker" tabindex="-1"></span>"""
+        content = """<div id="covidTracker" tabindex="-1" href=# onclick="return pycmd('covidStats')"></span>"""
         if self._recovered:
             content += f"""
 <script>{self._get_update_js(self._recovered, self._delta, self._time)}</script>
@@ -110,7 +114,7 @@ covidUpdate({json.dumps(recovered_str)}, {json.dumps(delta_str)}, {json.dumps(ti
         else:
             delta = max(recovered - self._recovered, 0)
         self._delta = delta
-        self._web.eval(self._get_update_js(recovered, delta, time))
+        self._toolbar.web.eval(self._get_update_js(recovered, delta, time))
 
 
 class DataFetcher(QThread):
@@ -144,7 +148,7 @@ class CovidTracker:
         self._data_fetcher.success.connect(self._on_request_succeeded)  # type: ignore
         self._data_fetcher.error.connect(self._on_request_failed)  # type: ignore
         package_name = main_window.addonManager.addonFromModule(__name__)
-        self._tracker_ui = TrackerUI(main_window.toolbarWeb, package_name)
+        self._tracker_ui = TrackerUI(main_window.toolbar, package_name)
 
     def run(self):
         gui_hooks.top_toolbar_did_init_links.append(

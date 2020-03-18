@@ -22,3 +22,7 @@ span.covidDataTitle{
 span.covidDataTitle{
     color: inherit;
 }
+#covidTracker:hover {
+  text-decoration: underline;
+  cursor: pointer
+}
