@@ -12,7 +12,7 @@
 
 
 
-A small add-on for [Anki](https://apps.ankiweb.net/) that adds a small indicator to the toolbar, displaying the number of people currently known to have recovered from [COVID-19](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic).
+A small add-on for [Anki](https://apps.ankiweb.net/) that extends the toolbar with an indicator displaying the number of people currently known to have recovered from [COVID-19](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic).
 
 The idea behind the add-on is to provide some encouragement in these troubling times, reminding us that this too shall pass.
 
