@@ -5,7 +5,7 @@
 <p align="center">
 <a title="Latest (pre-)release" href="https://github.com/glutanimate/coronavirus-tracker/releases"><img src ="https://img.shields.io/github/release-pre/glutanimate/coronavirus-tracker.svg?colorB=brightgreen"></a>
 <a title="License: GNU AGPLv3" href="https://github.com/glutanimate/coronavirus-tracker/blob/master/LICENSE"><img  src="https://img.shields.io/badge/license-GNU AGPLv3-green.svg"></a>
-<!--<a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/ANKIWEB_ID"><img src="https://glutanimate.com/logos/ankiweb-rate.svg"></a>-->
+<a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/1313091126"><img src="https://glutanimate.com/logos/ankiweb-rate.svg"></a>
 <br>
 <a title="Follow me on Twitter" href="https://twitter.com/intent/user?screen_name=glutanimate"><img src="https://img.shields.io/twitter/follow/glutanimate.svg"></a>
 </p>
@@ -39,7 +39,7 @@ Data source: [Johns Hopkins CSSE Coronavirus Resource Center](https://coronaviru
 #### AnkiWeb <!-- omit in toc -->
 
 This section will be updated once the add-on is available on AnkiWeb.
-<!-- The easiest way to install Coronavirus Tracker is through [AnkiWeb](https://ankiweb.net/shared/info/ANKIWEB_ID). -->
+The easiest way to install Coronavirus Tracker is through [AnkiWeb](https://ankiweb.net/shared/info/1313091126).
 
 #### Manual installation <!-- omit in toc -->
 
