@@ -1,6 +1,6 @@
 <!-- BANNER -->
 
-Adds a small indicator to Anki's toolbar, displaying the number of people currently known to have recovered from [COVID-19](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic) / the current coronavirus pandemic.
+Adds a small indicator to Anki's toolbar, displaying the number of people currently known to have recovered from [COVID-19](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic) / the coronavirus pandemic.
 
 **Requires Anki 2.1.22 or higher to work correctly** (which was [just released today](https://apps.ankiweb.net/#download))
 
@@ -10,7 +10,7 @@ Adds a small indicator to Anki's toolbar, displaying the number of people curren
 
 **Why?**
 
-It is important that we all do our part to fight this disease and [flatten the curve](https://www.flattenthecurve.com/). However, in this time of quarantine, social distancing, and all around worry, it's easy to get discouraged. My hope is that this add-on will provide some light at the end of tunnel, reminding us that this situation too shall pass.
+It is important that we all do our part to fight this disease and [flatten the curve](https://www.flattenthecurve.com/). However, in this time of social distancing, quarantine, and all around worry, it's easy enough to get discouraged. My hope is that this add-on will provide some light at the end of tunnel, reminding us that this situation too shall pass.
 
 **Where is the data sourced from?**
 
