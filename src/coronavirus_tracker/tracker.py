@@ -178,7 +178,9 @@ class CovidTracker:
 
     def start_timer(self):
         progress_manager: ProgressManager = self._main_window.progress
-        self._timer = progress_manager.timer(60000, self._on_timer_update, True, False)
+        self._timer = progress_manager.timer(
+            1800000, self._on_timer_update, True, False
+        )
 
     def _on_profile_will_close(self):
         self._timer.stop()
