@@ -76,6 +76,8 @@ class TrackerUI:
         return True
 
     def set_no_data(self):
+        if self._recovered:
+            return  # retain old value until connection restored
         self._no_data = True
         self._toolbar.web.eval("covidNoData();")
 
