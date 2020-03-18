@@ -91,7 +91,6 @@ class TrackerUI:
 
     def _get_update_js(self, recovered: int, delta: int, time: str):
         recovered_str = f"{recovered:n}"
-        print(delta)
         delta_str = f"{delta:n}"
         return f"""
 covidUpdate({json.dumps(recovered_str)}, {json.dumps(delta_str)}, {json.dumps(time)})
@@ -107,8 +106,9 @@ covidUpdate({json.dumps(recovered_str)}, {json.dumps(delta_str)}, {json.dumps(ti
 
     def _update_tracker_element(self, recovered: int, time: str):
         if self._recovered is None:
-            return
-        delta = max(recovered - self._recovered, 0)
+            delta = 0
+        else:
+            delta = max(recovered - self._recovered, 0)
         self._delta = delta
         self._web.eval(self._get_update_js(recovered, delta, time))
 
@@ -142,7 +142,7 @@ class CovidTracker:
         self._main_window = main_window
         self._data_fetcher = DataFetcher()
         self._data_fetcher.success.connect(self._on_request_succeeded)  # type: ignore
-        self._data_fetcher.error.connect(self._on_request_failed)
+        self._data_fetcher.error.connect(self._on_request_failed)  # type: ignore
         package_name = main_window.addonManager.addonFromModule(__name__)
         self._tracker_ui = TrackerUI(main_window.toolbarWeb, package_name)
 
@@ -159,7 +159,7 @@ class CovidTracker:
 
     def start_timer(self):
         progress_manager: ProgressManager = self._main_window.progress
-        self._timer = progress_manager.timer(2000, self._on_timer_update, True, False)
+        self._timer = progress_manager.timer(60000, self._on_timer_update, True, False)
 
     def _on_profile_will_close(self):
         self._timer.stop()
