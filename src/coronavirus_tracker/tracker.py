@@ -132,7 +132,7 @@ covidUpdate({json.dumps(recovered_str)}, {json.dumps(delta_str)}, {json.dumps(ti
 
 class DataFetcher(QThread):
 
-    # https://github.com/ExpDev07/coronavirus-tracker-api
+    # https://github.com/mathdroid/covid-19-api
     _API_URL = "https://covid19.mathdro.id/api"
 
     success = pyqtSignal(object)
