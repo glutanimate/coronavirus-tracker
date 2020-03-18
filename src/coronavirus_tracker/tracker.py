@@ -44,19 +44,23 @@ from .libaddon.gui.dialog_webview import WebViewer
 from aqt import gui_hooks
 from aqt.addons import AddonManager
 from aqt.main import AnkiQt
-from aqt.utils import openLink
 from aqt.progress import ProgressManager
 from aqt.toolbar import Toolbar, TopToolbar
-from aqt.webview import AnkiWebView, WebContent
+from aqt.webview import WebContent
+
+from .config import user_data
 
 
 class TrackerUI:
-    def __init__(self, toolbar: Toolbar, package_name: str):
+    def __init__(
+        self, toolbar: Toolbar, package_name: str, initial_data: Optional[dict] = None
+    ):
+        initial_data = initial_data or {}
         self._toolbar = toolbar
         self._package_name = package_name
-        self._recovered: Optional[int] = None
+        self._recovered: Optional[int] = initial_data.get("recovered")
         self._delta: int = 0
-        self._time: Optional[str] = None
+        self._datetime: Optional[str] = initial_data.get("datetime")
         self._no_data: bool = False
         self._toolbar.link_handlers["covidStats"] = self._link_handler
 
@@ -67,7 +71,7 @@ class TrackerUI:
             return False
         self._update_tracker_element(recovered, time)
         self._recovered = recovered
-        self._time = time
+        self._datetime = time
         # tooltip(f"{recovered}, {time}")
         return True
 
@@ -113,7 +117,7 @@ covidUpdate({json.dumps(recovered_str)}, {json.dumps(delta_str)}, {json.dumps(ti
         content = """<div id="covidTracker" tabindex="-1" href=# onclick="return pycmd('covidStats')"></span>"""
         if self._recovered:
             content += f"""
-<script>{self._get_update_js(self._recovered, self._delta, self._time)}</script>
+<script>{self._get_update_js(self._recovered, self._delta, self._datetime)}</script>
             """
         return content
 
@@ -157,7 +161,9 @@ class CovidTracker:
         self._data_fetcher.success.connect(self._on_request_succeeded)  # type: ignore
         self._data_fetcher.error.connect(self._on_request_failed)  # type: ignore
         package_name = main_window.addonManager.addonFromModule(__name__)
-        self._tracker_ui = TrackerUI(main_window.toolbar, package_name)
+        self._tracker_ui = TrackerUI(
+            main_window.toolbar, package_name, initial_data=user_data,
+        )
 
     def run(self):
         gui_hooks.top_toolbar_did_init_links.append(
@@ -195,6 +201,9 @@ class CovidTracker:
         # self.extra += 500
 
         self._tracker_ui.update(recovered, datetime)
+
+        user_data["datetime"] = datetime
+        user_data["recovered"] = recovered
 
     def _on_request_failed(self, exception: Exception):
         self._tracker_ui.set_no_data()

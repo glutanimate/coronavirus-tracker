@@ -35,6 +35,7 @@ Handles add-on configuration
 
 from aqt import mw
 
-from .libaddon.anki.configmanager import ConfigManager
+from .libaddon.config.storages.json import UserFilesConfigStorage
 
-config = ConfigManager(mw)
+user_data = UserFilesConfigStorage(mw, "data", {"recovered": None, "datetime": None})
+user_data.initialize()
