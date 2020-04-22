@@ -10,7 +10,7 @@ All notable changes to [Coronavirus Tracker](https://ankiweb.net/shared/info/) w
 
 ### Fixed
 
-- Fixed an add-on compatibility issue (thanks to AnKing for the report)
+- Fixed an add-on compatibility issue (thanks to Aleksej & AnKing for the reports, #1)
 
 ## [0.1.0] - 2020-03-18
 
