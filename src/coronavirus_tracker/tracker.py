@@ -116,7 +116,7 @@ covidUpdate({json.dumps(recovered_str)}, {json.dumps(delta_str)}, {json.dumps(ti
 """
 
     def _create_tracker_element(self):
-        content = """<div id="covidTracker" tabindex="-1" href=# onclick="return pycmd('covidStats')"></span>"""
+        content = """<div id="covidTracker" tabindex="-1" href=# onclick="return pycmd('covidStats')"></div>"""
         if self._recovered:
             content += f"""
 <script>{self._get_update_js(self._recovered, self._delta, self._datetime)}</script>
