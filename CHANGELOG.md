@@ -4,6 +4,10 @@ All notable changes to [Coronavirus Tracker](https://ankiweb.net/shared/info/) w
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed an add-on compatibility issue (thanks to AnKing for the report)
+
 ## [0.1.0] - 2020-03-18
 
 ### [Download](https://github.com/glutanimate/coronavirus-tracker/releases/tag/v0.1.0)
